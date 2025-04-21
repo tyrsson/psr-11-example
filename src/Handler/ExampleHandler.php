@@ -7,7 +7,7 @@ namespace Example\Handler;
 final class ExampleHandler
 {
     public function __construct(
-        // Add dependencies here
+        private array $config = [],
     ) {
         // Initialize dependencies
     }
