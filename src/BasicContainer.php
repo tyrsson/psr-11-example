@@ -76,7 +76,10 @@ class BasicContainer implements ContainerInterface
 
     public function has(string $id): bool
     {
-        return isset($this->services[$id]);
+        if (isset($this->services[$id]) || isset($this->factories[$id])) {
+            return true;
+        }
+        return false;
     }
 
     private function createService(string $id, ?array $options = null): object
