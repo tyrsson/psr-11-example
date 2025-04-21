@@ -1,0 +1,10 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Example\\": "src/"
+        }
+    },
+    "require": {
+        "psr/container": "^2.0"
+    }
+}
