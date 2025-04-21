@@ -17,4 +17,7 @@ return [
             // Add other service factories here
         ],
     ],
+    'example_config' => [
+        'example_key' => 'example_value',
+    ],
 ];
