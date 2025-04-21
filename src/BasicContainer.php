@@ -57,17 +57,17 @@ class BasicContainer implements ContainerInterface
 
     private function getFactory(string $id): callable
     {
-        $factory    = $this->factories[$id] ?? null;
-        $lazyLoaded = false;
+        $factory = $this->factories[$id] ?? null;
+
+        // If the factory is a string and the class exists, instantiate it
+        // This allows for class-based factories
         if (is_string($factory) && class_exists($factory)) {
             $factory = new $factory();
-            $lazyLoaded = true;
         }
 
+        // If the factory is callable, return it
         if (is_callable($factory)) {
-            if ($lazyLoaded) {
-                $this->factories[$id] = $factory;
-            }
+            $this->factories[$id] = $factory;
             return $factory;
         }
 
