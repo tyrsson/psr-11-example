@@ -64,7 +64,7 @@ class BasicContainer implements ContainerInterface
     private function createService(string $id, ?array $options = null): object
     {
         try {
-            $factory = $this->getFactory($id);
+            $factory  = $this->getFactory($id);
             $instance = $factory($this->container, $id, $options);
         } catch (ServiceNotFoundException $e) {
             throw $e;
