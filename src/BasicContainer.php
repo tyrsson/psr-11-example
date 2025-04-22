@@ -76,7 +76,7 @@ class BasicContainer implements ContainerInterface
             ), (int) $e->getCode(), $e);
         }
 
-        return $factory($this);
+        return $instance;
     }
 
     private function getFactory(string $id): callable
